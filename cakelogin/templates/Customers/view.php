@@ -51,6 +51,10 @@
                     <td><?= h($customer->updated_by) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Sale') ?></th>
+                    <td><?= $customer->has('sale') ? $this->Html->link($customer->sale->name, ['controller' => 'Sales', 'action' => 'view', $customer->sale->seller_id]) : '' ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($customer->id) ?></td>
                 </tr>
@@ -61,6 +65,10 @@
                 <tr>
                     <th><?= __('Status') ?></th>
                     <td><?= $customer->status ? __('Yes') : __('No'); ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Delete Flg') ?></th>
+                    <td><?= $customer->delete_flg ? __('Yes') : __('No'); ?></td>
                 </tr>
             </table>
         </div>

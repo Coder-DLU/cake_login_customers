@@ -19,6 +19,10 @@ use Cake\ORM\Entity;
  * @property string $created_by
  * @property \Cake\I18n\FrozenTime $updated
  * @property string $updated_by
+ * @property int $seller_id
+ * @property bool $delete_flg
+ *
+ * @property \App\Model\Entity\Sale $sale
  */
 class Customer extends Entity
 {
@@ -42,5 +46,8 @@ class Customer extends Entity
         'created_by' => true,
         'updated' => true,
         'updated_by' => true,
+        'seller_id' => true,
+        'delete_flg' => true,
+        'sale' => true,
     ];
 }

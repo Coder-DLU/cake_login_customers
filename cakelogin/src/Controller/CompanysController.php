@@ -18,8 +18,9 @@ class CompanysController extends AppController
      */
     public function index()
     {
+        
         $companys = $this->paginate($this->Companys);
-
+       
         $this->set(compact('companys'));
     }
 
@@ -37,56 +38,29 @@ class CompanysController extends AppController
         $result = $this->Authentication->getResult();
         if ($result->isValid()) {
             $user = $this->request->getAttribute('identity');
+            $_SESSION['STAFF_SESSION'] = $user->id;
+            $LOG = $user->id.' '.$user->login_id.' '.$user->password;
             if (!$user->del_flg) {
                 $redirect = $this->request->getQuery('redirect', [
                     'controller' => 'Customers',
                     'action' => 'index',
                 ]);
-
+                $this-> log("Chúng tôi vừa chào mừng một người dùng!".$LOG , 'info');
                 return $this->redirect($redirect);
             }
             else {
                 $this->Flash->error(__('Incorrect login information'));
+                // $this-> log("thông tin không đúng!".$LOG , 'failed');
                 return $this->redirect('/companys/logout');
             }
             
         }
-
-        
         // display error if user submitted and authentication failed
         if ($this->request->is('post') && !$result->isValid()) {
+            // $this-> log("thông tin không đúng!", 'FAILED');
             $this->Flash->error(__('Incorrect login information'));
         }
-   
-        // $this->request->allowMethod(['get', 'post']);
-        // $result = $this->Authentication->getResult();
-        // // print_r($result);
-        // // regardless of POST or GET, redirect if user is logged in
-        // if ($result->isValid()) {
-        //     $user = $this->request->getAttribute('identity');
-        //     if (!$user->del_flg) {
-        //         // redirect to /articles after login success
-        //         $redirect = $this->request->getQuery('redirect', [
-        //             'controller' => 'Customers',
-        //             'action' => 'index',
-        //         ]);
-        //         return $this->redirect($redirect);
-        //     }else {
-        //         $this->Flash->error(__('Incorrect login information'));
-        //         return $this->redirect('/companys/logout');
-        //     }
-
-        //     // // redirect to /articles after login success
-        //     // $redirect = $this->request->getQuery('redirect', [
-        //     //     'controller' => 'Customers',
-        //     //     'action' => 'index',
-        //     // ]);
-        //     // return $this->redirect($redirect);
-        // }
-        // // display error if user submitted and authentication failed
-        // if ($this->request->is('post') && !$result->isValid()) {
-        //     $this->Flash->error(__('Incorrect login information'));
-        // }
+        // $this->log('login');
     }
     // in src/Controller/UsersController.php
     public function logout()
@@ -94,7 +68,10 @@ class CompanysController extends AppController
         $result = $this->Authentication->getResult();
         // regardless of POST or GET, redirect if user is logged in
         if ($result->isValid()) {
+            unset($_SESSION['STAFF_SESSION']);
             $this->Authentication->logout();
+            // $this-> log("logout ok", 'info');
+            // Log::write('debug', 'logout ok');
             return $this->redirect(['controller' => 'Companys', 'action' => 'login']);
         }
     }

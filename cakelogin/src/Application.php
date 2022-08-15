@@ -122,7 +122,7 @@ class Application extends BaseApplication
     public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {
         $authenticationService = new AuthenticationService([
-            'unauthenticatedRedirect' => Router::url('/companys/login'),
+            'unauthenticatedRedirect' => Router::url('/'),
             'queryParam' => 'redirect',
         ]);
 
@@ -149,7 +149,7 @@ class Application extends BaseApplication
             'userModel' => 'Companys',
             'loginUrl' => Router::url('/'),
         ]);
-
+        // var_dump($authenticationService);
         return $authenticationService;
     }
 

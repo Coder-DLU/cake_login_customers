@@ -5,6 +5,9 @@ use Cake\Database\Connection;
 use Cake\Database\Driver\Mysql;
 use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
+//thêm vào
+use Cake\Log\Log;
+
 
 return [
     /*
@@ -378,6 +381,8 @@ return [
             'scopes' => ['queriesLog'],
         ],
     ],
+        //log tự ghi
+    
 
     /*
      * Session configuration.
@@ -421,4 +426,5 @@ return [
     'Session' => [
         'defaults' => 'php',
     ],
+    
 ];

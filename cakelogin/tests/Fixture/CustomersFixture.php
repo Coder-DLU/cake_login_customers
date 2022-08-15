@@ -28,8 +28,10 @@ class CustomersFixture extends TestFixture
                 'address' => 'Lorem ipsum dolor sit amet',
                 'status' => 1,
                 'created_by' => 'Lorem ipsum dolor sit amet',
-                'updated' => '2022-08-03 03:40:52',
+                'updated' => '2022-08-11 07:18:14',
                 'updated_by' => 'Lorem ipsum dolor sit amet',
+                'seller_id' => 1,
+                'delete_flg' => 1,
             ],
         ];
         parent::init();

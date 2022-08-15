@@ -22,6 +22,7 @@
             <fieldset>
                 <legend><?= __('Edit Company') ?></legend>
                 <?php
+                        
                     echo $this->Form->control('login_id',['type'=>'text']);
                     echo $this->Form->control('password');
                     echo $this->Form->control('del_flg');

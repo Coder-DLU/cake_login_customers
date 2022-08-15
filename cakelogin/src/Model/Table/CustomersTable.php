@@ -11,6 +11,8 @@ use Cake\Validation\Validator;
 /**
  * Customers Model
  *
+ * @property \App\Model\Table\SalesTable&\Cake\ORM\Association\BelongsTo $Sales
+ *
  * @method \App\Model\Entity\Customer newEmptyEntity()
  * @method \App\Model\Entity\Customer newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\Customer[] newEntities(array $data, array $options = [])
@@ -40,6 +42,11 @@ class CustomersTable extends Table
         $this->setTable('customers');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->belongsTo('Sales', [
+            'foreignKey' => 'seller_id',
+            'joinType' => 'INNER',
+        ]);
     }
 
     /**
@@ -101,6 +108,30 @@ class CustomersTable extends Table
             ->requirePresence('updated_by', 'create')
             ->notEmptyString('updated_by');
 
+        $validator
+            ->integer('seller_id')
+            ->requirePresence('seller_id', 'create')
+            ->notEmptyString('seller_id');
+
+        $validator
+            ->boolean('delete_flg')
+            ->requirePresence('delete_flg', 'create')
+            ->notEmptyString('delete_flg');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->existsIn('seller_id', 'Sales'), ['errorField' => 'seller_id']);
+
+        return $rules;
     }
 }
