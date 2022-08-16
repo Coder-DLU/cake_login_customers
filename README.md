@@ -1,3 +1,2 @@
 # cake_login_customers
-vendor1 đổi tên thành vendor
-tmp đổi tên thành tmp
+vendor và tmp lấy trong file zip hoặc chạy lại project sẽ có
