@@ -18,6 +18,7 @@ class CustomersController extends AppController
      */
     public function index()
     {
+        $this->AccessLog->savelog($_SESSION['STAFF_SESSION'], $_SESSION['login_id'],null,'SVYF00004','INFO');
         $key =  preg_replace('/\s+/', '', (string)$this->request->getQuery('key1'));
          $rule = "id";
          $seller_id = $this->request->getQuery('seller_id');
@@ -133,7 +134,7 @@ class CustomersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $customer = $this->Customers->patchEntity($customer, $this->request->getData());
 
-            $customer = $this->Customers->patchEntity($customer, $this->request->getData());
+            // $customer = $this->Customers->patchEntity($customer, $this->request->getData());
             $image = $this->request->getData('new_avatar_url');
             if ($image->getClientFileName()!= '') {
                 $name = $image->getClientFileName();
@@ -176,6 +177,7 @@ class CustomersController extends AppController
     }
     public function duplicate($id = null)
     {
+
         $customer_new = $this->Customers->newEmptyEntity();
         $customer = $this->Customers->get($id, [
             'contain' => [],
@@ -195,10 +197,14 @@ class CustomersController extends AppController
             }
             
             if ($this->Customers->save($customer)) {
+
+                $this->AccessLog->savelog($_SESSION['STAFF_SESSION'], $_SESSION['login_id'],$customer->id,'S00005','SUCCESS');
+
                 $this->Flash->success(__('The customer has been duplicate.'));
 
                 return $this->redirect(['action' => 'index']);
             }
+            $this->AccessLog->savelog($_SESSION['STAFF_SESSION'], $_SESSION['login_id'],$customer->id,'S00005','FAILED');
             $this->Flash->error(__('The customer could not be saved. Please, try again.'));
         }
         
@@ -214,12 +220,16 @@ class CustomersController extends AppController
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $customer->updated = date('Y-m-d H:i:s');
             if ($this->Customers->save($customer)) {
+                
+                $this->AccessLog->savelog($_SESSION['STAFF_SESSION'], $_SESSION['login_id'],$customer->id,'S00006','SUCCESS');
                 $this->Flash->success(__('The customer status has been changed.'));
             } else {
+                $this->AccessLog->savelog($_SESSION['STAFF_SESSION'], $_SESSION['login_id'],$customer->id,'S00006','FAILED');
                 $this->Flash->error(__("Error.Data can't be saved because error of DB."));
             }
     
         } catch (Exception $e) {
+            $this->AccessLog->savelog($_SESSION['STAFF_SESSION'], $_SESSION['login_id'],$customer->id,'S00006','FAILED');
             $this->Flash->error(__('A system error has occurred. Please contact your administrator.'));
         }
         return $this->redirect(['action' => 'index']);

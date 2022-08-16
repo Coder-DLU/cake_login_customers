@@ -46,7 +46,7 @@ class AppController extends Controller
 
          // Add this line to check authentication result and lock your site
         $this->loadComponent('Authentication.Authentication');
-
+        $this->loadComponent('AccessLog');
     
         //$this->loadComponent('FormProtection');
         // actions public, skipping the authentication check

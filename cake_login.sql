@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2022 at 11:34 AM
+-- Generation Time: Aug 16, 2022 at 12:18 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -71,22 +71,17 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `avatar_url`, `first_name`, `last_name`, `phone_number`, `email`, `address`, `status`, `created_by`, `updated`, `updated_by`, `seller_id`, `delete_flg`) VALUES
-(1, '405129.png', 'Lê Sỹ', 'Hùng ', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 15:02:03', '2', 1, 0),
-(2, 'download.png', 'Lê Sỹ', ' B', '0842415838', 'hungls12@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 13:48:40', '2', 2, 0),
-(3, '405129.png', 'Lê Sỹ', ' B', '0842415837', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 0, '2', '2022-08-11 15:02:09', '2', 2, 0),
-(4, 'download.png', 'Lê Sỹ', 'Hùng', '0842415839', 'hungls12@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 15:01:47', '2', 2, 0),
-(5, 'download.jpg', 'Đặng Ngọc ', 'Thạch', '0842415836', 'tstorecontact@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 15:01:56', '2', 3, 0),
-(6, 'download.jpg', 'Lê Sỹ', 'Hùng ', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 15:01:51', '2', 1, 0),
-(15, '405129.png', 'Lê Sỹ', 'Hùng 13234', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '1', '2022-08-11 13:51:13', '1', 1, 0),
-(16, '405129.png', 'Lê Sỹ', 'Hùng 66666', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '1', '2022-08-11 13:51:19', '1', 1, 0),
-(17, '405129.png', 'Lê Sỹ', 'Hùng 777', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '1', '2022-08-11 13:52:26', '1', 1, 0),
-(19, 'download.jpg', 'Lê Sỹ', 'Hùng  AAAA', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 14:27:14', '2', 1, 1),
-(22, '405129.png', 'Lê ', 'Lợi', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 16:36:25', '2', 1, 0),
-(23, '405129.png', 'Lê ', 'Hải', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 16:44:58', '2', 1, 0),
-(24, '405129.png', 'Lê  Thanh', 'Hải ', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-11 16:45:19', '2', 1, 0),
-(25, '405129.png', 'Lê  Thanh', 'Thanh', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 0, '2', '2022-08-11 16:47:50', '2', 1, 0),
-(26, '405129.png', 'Lê  Thanh', 'Long', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 0, '2', '2022-08-12 08:47:07', '2', 1, 0),
-(27, '405129.png', 'Lê  Thanh', 'Hải ', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-12 09:53:14', '2', 1, 0);
+(1, '405129.png', 'Lê Sỹ', 'Hùng', '0842415839', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:44:56', '2', 1, 0),
+(2, 'download.jpg', 'Lê Sỹ', 'Hùng', '0842415838', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:45:38', '2', 1, 0),
+(3, 'download.jpg', 'Lê', 'Hùng', '0842415838', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:45:54', '2', 1, 0),
+(4, 'download.jpg', 'Lê Sỹ', 'Hùng', '0842415838', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:46:04', '2', 2, 0),
+(5, 'download.jpg', 'Lê Sỹ', 'Hùng', '0842415838', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:46:17', '2', 3, 0),
+(6, 'download.png', 'Lê Sỹ', 'A', '0842415838', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:46:29', '2', 3, 0),
+(7, 'download.png', 'Lê Sỹ', 'A', '0842415838', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:46:47', '2', 3, 0),
+(8, 'download.png', ' Sỹ', 'Hùng', '0842415838', 'hunglsctk42@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:46:59', '2', 4, 0),
+(9, 'download.png', ' Sỹ', 'Hùng', '0842415838', 'hungls12@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:47:36', '2', 2, 0),
+(10, 'download.png', 'Trân', 'Trân', '0842415838', 'hungls12@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:47:59', '2', 2, 0),
+(11, '405129.png', 'Trân ', 'Trân A', '0842415838', 'hungls12@gmail.com', '65/5 Thông thiên học P2 TP Đà Lạt', 1, '2', '2022-08-16 11:48:23', '2', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -114,20 +109,68 @@ INSERT INTO `sales` (`seller_id`, `name`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `survey.access_log`
+-- Table structure for table `surveyaccesslog`
 --
 
-CREATE TABLE `survey.access_log` (
-  `SYAIN_CD` varchar(255) NOT NULL,
-  `SELLER_ID` int(11) NOT NULL,
-  `CUSTOMER_ID` int(11) NOT NULL,
-  `FUNCTION_ID` int(11) NOT NULL,
-  `ACCESS_LOG_LEVEL` int(11) NOT NULL,
-  `ACCESS_DT` varchar(255) NOT NULL,
-  `YYYYMM` date NOT NULL,
-  `HOUR` date NOT NULL,
-  `WEEKDAY` date NOT NULL
+CREATE TABLE `surveyaccesslog` (
+  `id` int(11) NOT NULL,
+  `SYAIN_CD` int(11) DEFAULT NULL,
+  `SELLER_ID` varchar(255) DEFAULT NULL,
+  `CUSTOMER_ID` int(11) DEFAULT NULL,
+  `FUNCTION_ID` varchar(255) NOT NULL,
+  `ACCESS_LOG_LEVEL` enum('INFO','FAILED','SUCCESS','') NOT NULL,
+  `ACCESS_DT` datetime NOT NULL,
+  `YYYYMM` varchar(255) NOT NULL,
+  `HOUR` int(11) NOT NULL,
+  `WEEKDAY` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `surveyaccesslog`
+--
+
+INSERT INTO `surveyaccesslog` (`id`, `SYAIN_CD`, `SELLER_ID`, `CUSTOMER_ID`, `FUNCTION_ID`, `ACCESS_LOG_LEVEL`, `ACCESS_DT`, `YYYYMM`, `HOUR`, `WEEKDAY`) VALUES
+(1, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:41:24', '2022-08', 11, 2),
+(2, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:43:18', '2022-08', 11, 2),
+(3, 2, 'hung02', 31, 'S00005', 'SUCCESS', '2022-08-16 11:43:39', '2022-08', 11, 2),
+(4, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:43:39', '2022-08', 11, 2),
+(5, 2, 'hung02', 32, 'S00005', 'SUCCESS', '2022-08-16 11:43:52', '2022-08', 11, 2),
+(6, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:43:52', '2022-08', 11, 2),
+(7, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:44:54', '2022-08', 11, 2),
+(8, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:45:13', '2022-08', 11, 2),
+(9, 2, 'hung02', 2, 'S00005', 'SUCCESS', '2022-08-16 11:45:48', '2022-08', 11, 2),
+(10, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:45:49', '2022-08', 11, 2),
+(11, 2, 'hung02', 3, 'S00005', 'SUCCESS', '2022-08-16 11:46:00', '2022-08', 11, 2),
+(12, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:46:00', '2022-08', 11, 2),
+(13, 2, 'hung02', 4, 'S00005', 'SUCCESS', '2022-08-16 11:46:12', '2022-08', 11, 2),
+(14, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:46:12', '2022-08', 11, 2),
+(15, 2, 'hung02', 5, 'S00005', 'SUCCESS', '2022-08-16 11:46:24', '2022-08', 11, 2),
+(16, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:46:25', '2022-08', 11, 2),
+(17, 2, 'hung02', 6, 'S00005', 'SUCCESS', '2022-08-16 11:46:39', '2022-08', 11, 2),
+(18, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:46:40', '2022-08', 11, 2),
+(19, 2, 'hung02', 7, 'S00005', 'SUCCESS', '2022-08-16 11:46:53', '2022-08', 11, 2),
+(20, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:46:54', '2022-08', 11, 2),
+(21, 2, 'hung02', 8, 'S00005', 'SUCCESS', '2022-08-16 11:47:28', '2022-08', 11, 2),
+(22, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:47:28', '2022-08', 11, 2),
+(23, 2, 'hung02', 9, 'S00005', 'SUCCESS', '2022-08-16 11:47:50', '2022-08', 11, 2),
+(24, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:47:50', '2022-08', 11, 2),
+(25, 2, 'hung02', 10, 'S00005', 'SUCCESS', '2022-08-16 11:48:11', '2022-08', 11, 2),
+(26, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:48:12', '2022-08', 11, 2),
+(27, 2, 'hung02', 11, 'S00005', 'SUCCESS', '2022-08-16 11:48:36', '2022-08', 11, 2),
+(28, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:48:36', '2022-08', 11, 2),
+(29, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:48:40', '2022-08', 11, 2),
+(30, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 11:48:44', '2022-08', 11, 2),
+(31, NULL, NULL, NULL, 'S00001', 'INFO', '2022-08-16 14:10:56', '2022-08', 14, 2),
+(32, 2, 'hung02', NULL, 'S00001', 'SUCCESS', '2022-08-16 14:10:56', '2022-08', 14, 2),
+(33, NULL, NULL, NULL, 'S00001', 'INFO', '2022-08-16 15:34:33', '2022-08', 15, 2),
+(34, 2, 'hung02', NULL, 'S00001', 'SUCCESS', '2022-08-16 15:34:33', '2022-08', 15, 2),
+(35, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 15:34:37', '2022-08', 15, 2),
+(36, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 15:35:17', '2022-08', 15, 2),
+(37, NULL, NULL, NULL, 'S00001', 'INFO', '2022-08-16 16:58:51', '2022-08', 16, 2),
+(38, 2, 'hung02', NULL, 'S00001', 'SUCCESS', '2022-08-16 16:58:51', '2022-08', 16, 2),
+(39, NULL, NULL, NULL, 'S00001', 'INFO', '2022-08-16 17:14:28', '2022-08', 17, 2),
+(40, 2, 'hung02', NULL, 'S00001', 'SUCCESS', '2022-08-16 17:14:28', '2022-08', 17, 2),
+(41, 2, 'hung02', NULL, 'SVYF00004', 'INFO', '2022-08-16 17:14:28', '2022-08', 17, 2);
 
 --
 -- Indexes for dumped tables
@@ -153,6 +196,12 @@ ALTER TABLE `sales`
   ADD PRIMARY KEY (`seller_id`);
 
 --
+-- Indexes for table `surveyaccesslog`
+--
+ALTER TABLE `surveyaccesslog`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -166,13 +215,19 @@ ALTER TABLE `companys`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
   MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `surveyaccesslog`
+--
+ALTER TABLE `surveyaccesslog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Constraints for dumped tables

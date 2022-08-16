@@ -34,30 +34,38 @@ class CompanysController extends AppController
 
     public function login()
     {
+    
         $this->request->allowMethod(['get', 'post', 'validata'=>'update']);
         $result = $this->Authentication->getResult();
         if ($result->isValid()) {
+            $this->AccessLog->savelog(null,null,null,'S00001','INFO');
             $user = $this->request->getAttribute('identity');
+            // dd($user);
             $_SESSION['STAFF_SESSION'] = $user->id;
-            $LOG = $user->id.' '.$user->login_id.' '.$user->password;
+            $_SESSION['login_id']= $user->login_id;
+            // $LOG = $user->id.' '.$user->login_id.' '.$user->password;
             if (!$user->del_flg) {
                 $redirect = $this->request->getQuery('redirect', [
                     'controller' => 'Customers',
                     'action' => 'index',
                 ]);
-                $this-> log("Chúng tôi vừa chào mừng một người dùng!".$LOG , 'info');
+
+                $this->AccessLog->savelog($_SESSION['STAFF_SESSION'],$user->login_id,null,'S00001','SUCCESS');
+
                 return $this->redirect($redirect);
             }
             else {
+
+                $this->AccessLog->savelog(null,null,null,'S00001','FAILED');
+
                 $this->Flash->error(__('Incorrect login information'));
-                // $this-> log("thông tin không đúng!".$LOG , 'failed');
                 return $this->redirect('/companys/logout');
             }
             
         }
         // display error if user submitted and authentication failed
         if ($this->request->is('post') && !$result->isValid()) {
-            // $this-> log("thông tin không đúng!", 'FAILED');
+            $this->AccessLog->savelog(null,null,null,'S00001','FAILED');
             $this->Flash->error(__('Incorrect login information'));
         }
         // $this->log('login');
@@ -65,24 +73,23 @@ class CompanysController extends AppController
     // in src/Controller/UsersController.php
     public function logout()
     {
-        $result = $this->Authentication->getResult();
-        // regardless of POST or GET, redirect if user is logged in
-        if ($result->isValid()) {
-            unset($_SESSION['STAFF_SESSION']);
-            $this->Authentication->logout();
-            // $this-> log("logout ok", 'info');
-            // Log::write('debug', 'logout ok');
-            return $this->redirect(['controller' => 'Companys', 'action' => 'login']);
-        }
+       try {
+            $result = $this->Authentication->getResult();
+            // regardless of POST or GET, redirect if user is logged in
+            if ($result->isValid()) {
+                $user = $this->request->getAttribute('identity');
+                $this->AccessLog->savelog($_SESSION['STAFF_SESSION'],$user->login_id,null,'S00002','SUCCESS');
+
+                unset($_SESSION['STAFF_SESSION']);
+                $this->Authentication->logout();
+                return $this->redirect(['controller' => 'Companys', 'action' => 'login']);
+            }
+       } catch (\Throwable $th) {
+            $this->AccessLog->savelog(null,null,null,'S00002','FAILED');
+       }
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Company id.
-     * @return \Cake\Http\Response|null|void Renders view
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
+
     public function view($id = null)
     {
         $company = $this->Companys->get($id, [
